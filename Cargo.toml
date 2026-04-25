@@ -1,0 +1,9 @@
+[package]
+name = "parallel-unzip"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ripunzip = "2"
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
