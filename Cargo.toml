@@ -7,3 +7,4 @@ edition = "2021"
 ripunzip = "2"
 clap = { version = "4", features = ["derive"] }
 anyhow = "1"
+indicatif = "0.17"
