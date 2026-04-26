@@ -76,6 +76,14 @@ fn main() -> Result<()> {
     let elapsed = started.elapsed();
 
     bar.finish_and_clear();
-    println!("Готово. Распаковка заняла {:.3} с", elapsed.as_secs_f64());
+    let secs = elapsed.as_secs();
+    let duration = if secs >= 3600 {
+        format!("{} ч {} мин {} с", secs / 3600, secs % 3600 / 60, secs % 60)
+    } else if secs >= 60 {
+        format!("{} мин {} с", secs / 60, secs % 60)
+    } else {
+        format!("{:.3} с", elapsed.as_secs_f64())
+    };
+    println!("Готово. Распаковка заняла {}", duration);
     Ok(())
 }
